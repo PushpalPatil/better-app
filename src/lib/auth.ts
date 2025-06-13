@@ -8,6 +8,12 @@ import { schema } from "@/db/schema";
 // need cookies because well. u need it for sign in and email/password symantics
 
 export const auth = betterAuth({
+    socialProviders: {
+        google: { 
+            clientId: process.env.GOOGLE_CLIENT_ID as string, 
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET as string, 
+        }, 
+    },
     emailAndPassword: {  
         enabled: true
     },
